@@ -86,6 +86,7 @@ def main():
     fix_x_test = df_2019[['mean_return', 'volatility']]
     fit_y_test = df_2019[['Classification']].values
 
+    print('The selected combination may yield different results because it\'s a random selection from a set of optimal N and D values.')
     print('\nQuestion 1:')
 
     error_random_tree = np.zeros((10, 5))
@@ -113,6 +114,7 @@ def main():
     print('The following N, D values have the minimum errors: \n{}'.format(min_indices + 1))
     random_index = random.randrange(0, len(min_indices)-1)
     selected_n_d = min_indices[random_index] + 1
+    print('There are most likely multiple N, D pairs with the same minimum error, so I will be using a random set from them.')
     print('I will use the random set: n={}, d={})'.format(selected_n_d[0], selected_n_d[1]))
 
     print('\nQuestion 2:')

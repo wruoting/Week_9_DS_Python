@@ -57,7 +57,10 @@ def main():
 
     print('With buy and hold: ${}'.format(balance_end_hold))
     print('With Decision Tree: ${}'.format(balance_end_decision_tree))
-    print('Buy and hold is a better strategy.')
+    if balance_end_decision_tree > balance_end_hold:
+        print('Decision Tree is a better strategy.')
+    else:
+        print('Buy and hold is a better strategy.')
     
 if __name__ == "__main__":
     main()
